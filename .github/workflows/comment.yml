@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install
-      - name: Write to _data/comments.yml
+      - name: Write to data/comments.yml
         run: npx tsx dev/add-comment.ts '${{ toJson(github.event) }}'
       - name: Build
         run: npx tsx dev/build.ts
@@ -23,7 +23,7 @@ jobs:
         run: |
           git config --local user.name 'Github Actions: ${{ github.action }} (for @${{ github.event.sender.login }})'
           git config --local user.email '${{ github.event.sender.login }}@users.noreply.github.com'
-          git add dev/comments.yml
+          git add data/comments.yml
           git commit -m "Add comment from @${{ github.event.sender.login }}
 
           Resolves #${{ github.event.issue.number }}"
@@ -42,3 +42,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+    permissions:
+      pages: write
+      id-token: write
