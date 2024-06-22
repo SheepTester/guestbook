@@ -30,6 +30,7 @@ jobs:
           git push
     permissions:
       contents: write
+      issues: write
 
   # Deployment job from https://github.com/ucsd-cse125-sp24/group1/blob/main/.github/workflows/gh-pages.yml
   deploy:
