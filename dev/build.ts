@@ -13,6 +13,8 @@ await fs.writeFile(
     '<title>guestbook (wip)</title>',
     '<meta name="description" content="guestbook lol" />',
     '<style>:root { color-scheme: dark }</style>',
+    '<h1>guestbook (wip)</h1>',
+    '<a href="https://github.com/SheepTester/longer-tweets/issues/new?assignees=&labels=comment&projects=&template=comment.md">add comment</a>',
     `<ul>${comments
       .map(
         comment =>
