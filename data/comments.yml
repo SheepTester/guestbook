@@ -1,7 +1,9 @@
 - author: SheepTester
   avatar: https://avatars.githubusercontent.com/u/22133785?v=4
   title: test 1
-  content: "first try,\npart two"
+  content: |-
+    first try,
+    part two
   issue_number: 2
   timestamp: 2024-06-22T05:46:59.000Z
 - author: SheepTester
@@ -23,3 +25,13 @@
   content: Hello There!
   issue_number: 5
   timestamp: 2024-06-22T17:40:25.000Z
+- author: SheepTester
+  avatar: https://avatars.githubusercontent.com/u/22133785?v=4
+  title: hello
+  content: "\r
+
+    i am still working on the guestbook design\r
+
+    \r\n"
+  issue_number: 7
+  timestamp: 2024-06-29T20:33:47.000Z
