@@ -14,7 +14,9 @@ jobs:
       - name: Write to data/comments.yml
         run: npx tsx dev/add-comment.ts '${{ toJson(github.event) }}'
       - name: Build
-        run: npx tsx dev/build.ts
+        run: |
+          npx tsx dev/build.ts
+          find public/ -type f | sed 's/public\\//https:\\/\\/sheeptester.github.io\\/guestbook\\//' > public/sitemap.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
