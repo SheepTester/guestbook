@@ -10,6 +10,7 @@ const comments: GuestbookComment[] =
 comments.push({
   author: sender.login,
   avatar: sender.avatar_url,
+  title: issue.title,
   content: issue.body,
   issue_number: issue.number,
   timestamp: new Date(issue.updated_at)

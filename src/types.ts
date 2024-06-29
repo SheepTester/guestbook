@@ -21,6 +21,7 @@ export type Action = {
 
 export type GuestbookComment = {
   author: string
+  title: string
   content: string
   issue_number: number
   avatar: string

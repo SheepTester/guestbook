@@ -14,6 +14,7 @@ const context = await esbuild.context({
   platform: 'node',
   format: 'esm',
   packages: 'external',
+  supported: { nesting: false },
   bundle: true,
   sourcemap: serveMode,
   minify: true
