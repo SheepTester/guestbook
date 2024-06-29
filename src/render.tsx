@@ -8,7 +8,7 @@ import './index.css'
 const comments: GuestbookComment[] =
   YAML.parse(await fs.readFile('data/comments.yml', 'utf-8')) ?? []
 
-fs.writeFile(
+await fs.writeFile(
   './public/index.html',
   renderToStaticMarkup(<Page comments={comments} />)
 )

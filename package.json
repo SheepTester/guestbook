@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "esbuild --bundle --platform=node --packages=external src/render.tsx --outdir=build --format=esm --minify && node build/render.js && cp build/render.css public/"
+    "build": "node dev/esbuild.js",
+    "dev": "node dev/esbuild.js --serve"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -10,6 +11,7 @@
   "devDependencies": {
     "@types/node": "^20.14.7",
     "@types/react-dom": "^18.3.0",
+    "express": "^4.19.2",
     "tsx": "^4.15.7"
   },
   "type": "module"
