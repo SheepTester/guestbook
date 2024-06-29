@@ -1,9 +1,8 @@
 // @ts-check
 
 import esbuild from 'esbuild'
-import fs from 'fs/promises'
 import express from 'express'
-import runRender from './run-render.cjs'
+import fs from 'fs/promises'
 import { fileURLToPath } from 'url'
 
 const args = process.argv.slice(2)
@@ -23,14 +22,14 @@ if (serveMode) {
   const app = express()
   app.get('/', async (_req, res) => {
     await context.rebuild()
-    await runRender()
+    // https://stackoverflow.com/a/75057660
+    await import('../build/render.js?_=' + Math.random())
     res.sendFile(
       fileURLToPath(new URL('../public/index.html', import.meta.url))
     )
   })
   app.get('/index.css', async (_req, res) => {
     await context.rebuild()
-    await runRender()
     res.sendFile(fileURLToPath(new URL('../build/render.css', import.meta.url)))
   })
   app.listen(8080)
@@ -38,6 +37,7 @@ if (serveMode) {
 } else {
   await context.rebuild()
   await context.dispose()
+  await fs.mkdir('public/', { recursive: true })
   await import('../build/render.js')
   await fs.copyFile('build/render.css', 'public/index.css')
 }
