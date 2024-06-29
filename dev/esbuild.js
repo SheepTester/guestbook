@@ -15,6 +15,7 @@ const context = await esbuild.context({
   format: 'esm',
   packages: 'external',
   bundle: true,
+  sourcemap: serveMode,
   minify: true
 })
 
@@ -31,6 +32,21 @@ if (serveMode) {
   app.get('/index.css', async (_req, res) => {
     await context.rebuild()
     res.sendFile(fileURLToPath(new URL('../build/render.css', import.meta.url)))
+  })
+  app.get('/render.css.map', async (_req, res) => {
+    await context.rebuild()
+    res.sendFile(
+      fileURLToPath(new URL('../build/render.css.map', import.meta.url))
+    )
+  })
+  app.get('/sheep3.css', async (_req, res) => {
+    res.redirect('https://sheeptester.github.io/sheep3.css')
+  })
+  app.get('/sheep3.js', async (_req, res) => {
+    res.redirect('https://sheeptester.github.io/sheep3.js')
+  })
+  app.get('/pensive.js', async (_req, res) => {
+    res.header('Content-Type', 'text/javascript').send('')
   })
   app.listen(8080)
   console.log(`http://localhost:8080/`)

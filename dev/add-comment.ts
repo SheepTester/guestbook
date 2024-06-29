@@ -1,6 +1,6 @@
 import fs from 'fs/promises'
 import YAML from 'yaml'
-import { Action, GuestbookComment } from './types'
+import { Action, GuestbookComment } from '../src/types'
 
 const { issue, sender }: Action = JSON.parse(process.argv[2])
 

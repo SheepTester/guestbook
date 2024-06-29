@@ -1,7 +1,7 @@
 import fs from 'fs/promises'
 import { renderToStaticMarkup } from 'react-dom/server'
 import YAML from 'yaml'
-import { GuestbookComment } from '../dev/types'
+import { GuestbookComment } from './types'
 import { Page } from './Page'
 import './index.css'
 

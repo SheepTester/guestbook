@@ -1,8 +1,22 @@
-import { GuestbookComment } from '../dev/types'
+import { Comment } from './component/Comment'
+import { GuestbookComment } from './types'
+import styles from './App.module.css'
 
 export type AppProps = {
   comments: GuestbookComment[]
 }
 export function App ({ comments }: AppProps) {
-  return <pre>LOL{JSON.stringify(comments, null, 2)}</pre>
+  return (
+    <div className={styles.comments}>
+      <a
+        className={styles.addComment}
+        href='https://github.com/SheepTester/guestbook/issues/new?assignees=&labels=comment&projects=&template=comment.md'
+      >
+        Add comment
+      </a>
+      {comments.reverse().map((comment, i) => (
+        <Comment comment={comment} key={i} />
+      ))}
+    </div>
+  )
 }

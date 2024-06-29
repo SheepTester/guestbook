@@ -1,0 +1,18 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.addComment {
+  background-color: royalblue;
+  color: white;
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: color-mix(in srgb, black 15%, royalblue);
+  }
+}

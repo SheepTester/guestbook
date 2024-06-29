@@ -1,0 +1,43 @@
+.comment {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author,
+.date {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.content {
+  & img {
+    max-width: 100%;
+  }
+
+  & :first-child {
+    margin-top: 0;
+  }
+  & :last-child {
+    margin-bottom: 0;
+  }
+}
