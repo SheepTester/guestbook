@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "node dev/esbuild.js",
+    "build": "node dev/esbuild.js && find public/ -type f | sed 's/public\\//https:\\/\\/sheeptester.github.io\\/guestbook\\//' > public/sitemap.txt",
     "dev": "node dev/esbuild.js --serve"
   },
   "dependencies": {
