@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm install
       - name: Write to data/comments.yml
-        run: npx tsx dev/add-comment.ts '${{ toJson(github.event) }}'
+        env:
+          COMMENT: ${{ toJson(github.event) }}
+        run: npx tsx dev/add-comment.ts $COMMENT
       - name: Build
         run: npm run build
       - name: Upload artifact
