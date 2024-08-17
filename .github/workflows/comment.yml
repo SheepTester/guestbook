@@ -14,7 +14,7 @@ jobs:
       - name: Write to data/comments.yml
         env:
           COMMENT: ${{ toJson(github.event) }}
-        run: npx tsx dev/add-comment.ts $COMMENT
+        run: npx tsx dev/add-comment.ts
       - name: Build
         run: npm run build
       - name: Upload artifact
