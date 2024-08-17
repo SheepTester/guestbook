@@ -41,3 +41,30 @@
   content: null
   issue_number: 8
   timestamp: 2024-07-03T22:06:44.000Z
+- author: SheepTester
+  avatar: https://avatars.githubusercontent.com/u/22133785?v=4
+  title: test 2
+  content: "\x01\x02\x03\x04\x05\x06\a\b\t\r
+
+    \v\f\r
+
+    \x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\e\x1c\x1d\x1e\x1f
+    !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghi\
+    jklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´\
+    µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ\
+    \r
+
+    \r
+
+    ```js\r
+
+    copy(Array.from({length: 256 }, (_, i) =>
+    String.fromCharCode(i)).join('').slice(1))\r
+
+    ```\r
+
+    \r
+
+    see #10 "
+  issue_number: 11
+  timestamp: 2024-08-17T03:43:13.000Z
