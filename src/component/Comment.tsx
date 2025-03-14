@@ -8,10 +8,11 @@ export type CommentProps = {
   comment: GuestbookComment
 }
 export function Comment ({
-  comment: { author, avatar, content, issue_number, timestamp }
+  comment: { author, avatar, title, content, issue_number, timestamp }
 }: CommentProps) {
+  const contentEmpty = content.trim().length === 0
   return (
-    <div className={styles.comment}>
+    <article className={styles.comment}>
       <div className={styles.header}>
         <a className={styles.author} href={`https://github.com/${author}`}>
           <img
@@ -34,9 +35,10 @@ export function Comment ({
           })}
         </a>
       </div>
+      {!contentEmpty ? <h1 className={styles.heading}>{title}</h1> : null}
       <div className={styles.content}>
-        <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{content}</Markdown>
+        <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{contentEmpty ? title : content}</Markdown>
       </div>
-    </div>
+    </article>
   )
 }
