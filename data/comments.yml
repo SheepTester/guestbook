@@ -128,3 +128,14 @@
   content: or this?
   issue_number: 20
   timestamp: 2025-03-14T11:47:30.000Z
+- author: SheepTester
+  avatar: https://avatars.githubusercontent.com/u/22133785?v=4
+  title: guestbook update
+  content: >-
+    it now shows titles
+
+
+    also idk how to make it deploy to github pages without posting to my own
+    guestbook
+  issue_number: 22
+  timestamp: 2025-03-14T18:56:55.000Z
