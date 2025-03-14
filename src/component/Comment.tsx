@@ -10,7 +10,7 @@ export type CommentProps = {
 export function Comment ({
   comment: { author, avatar, title, content, issue_number, timestamp }
 }: CommentProps) {
-  const contentEmpty = content.trim().length === 0
+  const contentEmpty = content === null || content.trim().length === 0
   return (
     <article className={styles.comment}>
       <div className={styles.header}>
