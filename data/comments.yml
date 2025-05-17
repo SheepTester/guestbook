@@ -35,6 +35,7 @@
     \r\n"
   issue_number: 7
   timestamp: 2024-06-29T20:33:47.000Z
+  references: /guestbook/
 - author: icedTet
   avatar: https://avatars.githubusercontent.com/u/67522292?v=4
   title: Hi
@@ -83,6 +84,7 @@
     lovely design, lovely transitions.
   issue_number: 13
   timestamp: 2024-08-26T13:55:48.000Z
+  references: /javascripts/
 - author: anassajaanan
   avatar: https://avatars.githubusercontent.com/u/114141528?v=4
   title: this is Anas
@@ -101,6 +103,7 @@
   content: thanks for making this! i can finally find good places to study!
   issue_number: 16
   timestamp: 2024-10-17T01:17:49.000Z
+  references: /uxdy/classrooms/
 - author: MemiStar
   avatar: https://avatars.githubusercontent.com/u/72506467?v=4
   title: Love your SSTV encoder
@@ -108,6 +111,7 @@
     really interesting to see how it works. Tysm!
   issue_number: 17
   timestamp: 2025-01-09T23:03:50.000Z
+  references: /javascripts/sstv-encoder.html
 - author: pigeonDEDAO
   avatar: https://avatars.githubusercontent.com/u/126037971?v=4
   title: he
@@ -116,6 +120,7 @@
     that implemented with JavaScript?
   issue_number: 18
   timestamp: 2025-01-12T01:01:59.000Z
+  references: /words-go-here/misc/artificial-thonkulos/khwvahy/
 - author: CPUMasterBit
   avatar: https://avatars.githubusercontent.com/u/176453601?v=4
   title: Hi
@@ -139,6 +144,7 @@
     guestbook
   issue_number: 22
   timestamp: 2025-03-14T18:56:55.000Z
+  references: /guestbook/
 - author: FahadBinHussain
   avatar: https://avatars.githubusercontent.com/u/75292632?v=4
   title: great portfolio you have!
