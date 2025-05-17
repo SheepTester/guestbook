@@ -145,3 +145,9 @@
   content: null
   issue_number: 23
   timestamp: 2025-04-11T15:05:05.000Z
+- author: anematode
+  avatar: https://avatars.githubusercontent.com/u/26530804?v=4
+  title: Shapely
+  content: Shapely
+  issue_number: 24
+  timestamp: 2025-05-17T19:23:29.000Z
