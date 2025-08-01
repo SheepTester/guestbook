@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: git pull || true # TEMP ? see #28
       - run: npm install
       - name: Write to data/comments.yml
         env:
