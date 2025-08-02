@@ -8,9 +8,10 @@ jobs:
     name: Write comment to comments.yml, then build
     if: ${{ contains(github.event.issue.labels.*.name, 'comment') }}
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}
     steps:
       - uses: actions/checkout@v4
-      - run: git pull || true # TEMP ? see #28
       - run: npm install
       - name: Write to data/comments.yml
         env:
