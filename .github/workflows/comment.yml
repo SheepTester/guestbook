@@ -3,6 +3,7 @@ name: Add comment
 on:
   issues:
     types: opened
+  workflow_dispatch:
 jobs:
   comment-and-build:
     name: Write comment to comments.yml, then build
@@ -14,8 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm install
       - name: Write to data/comments.yml
-        env:
-          COMMENT: ${{ toJson(github.event) }}
+        if: ${{ github.event_name == 'issues' }}
         run: npx tsx dev/add-comment.ts
       - name: Build
         run: npm run build

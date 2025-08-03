@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import YAML from 'yaml'
 import { Action, GuestbookComment } from '../src/types'
 
-const { issue, sender }: Action = JSON.parse(process.env.COMMENT)
+const { issue, sender }: Action = JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf-8'))
 
 const comments: GuestbookComment[] =
   YAML.parse(await fs.readFile('data/comments.yml', 'utf-8')) ?? []
