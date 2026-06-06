@@ -24,6 +24,7 @@ jobs:
         with:
           path: public/
       - name: Push changes
+        if: ${{ github.event_name == 'issues' }}
         run: |
           git config --local user.name 'Github Actions: ${{ github.action }} (for @${{ github.event.sender.login }})'
           git config --local user.email '${{ github.event.sender.login }}@users.noreply.github.com'
