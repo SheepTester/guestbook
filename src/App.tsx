@@ -9,7 +9,7 @@ export function App ({ comments }: AppProps) {
   return (
     <div className={styles.comments}>
       <a
-        className={styles.addComment}
+        className='button'
         href='https://github.com/SheepTester/guestbook/issues/new?template=comment.md'
       >
         Add comment

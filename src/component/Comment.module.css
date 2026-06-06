@@ -51,3 +51,17 @@
     margin-bottom: 0;
   }
 }
+.collapsed {
+  max-height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+.shadow {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  background-image: linear-gradient(to top, Canvas, transparent);
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}

@@ -6,6 +6,7 @@
     "jsx": "react-jsx",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "noUncheckedSideEffectImports": false
   }
 }

@@ -3,6 +3,7 @@ import { GuestbookComment } from '../types'
 import styles from './Comment.module.css'
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
+import { useState } from 'react'
 
 export type CommentProps = {
   comment: GuestbookComment
@@ -11,6 +12,11 @@ export function Comment ({
   comment: { author, avatar, title, content, issue_number, timestamp }
 }: CommentProps) {
   const contentEmpty = content === null || content.trim().length === 0
+
+  const [collapsed, setCollapsed] = useState(true)
+  const isLong = content && content.length > 1000
+  const isCollapsed = isLong && collapsed
+
   return (
     <article className={styles.comment}>
       <div className={styles.header}>
@@ -36,8 +42,23 @@ export function Comment ({
         </a>
       </div>
       {!contentEmpty ? <h1 className={styles.heading}>{title}</h1> : null}
-      <div className={styles.content}>
-        <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{contentEmpty ? title : content}</Markdown>
+      <div
+        className={`${styles.content} ${isCollapsed ? styles.collapsed : ''}`}
+      >
+        {contentEmpty ? (
+          <p>title</p>
+        ) : (
+          <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+            {content}
+          </Markdown>
+        )}
+        {isCollapsed ? (
+          <div className={styles.shadow}>
+            <button className='button' onClick={() => setCollapsed(false)}>
+              Show more
+            </button>
+          </div>
+        ) : null}
       </div>
     </article>
   )

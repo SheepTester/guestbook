@@ -6,15 +6,3 @@
   max-width: 800px;
   margin: 0 auto;
 }
-
-.addComment {
-  background-color: royalblue;
-  color: white;
-  align-self: flex-start;
-  padding: 10px 15px;
-  border-radius: 5px;
-
-  &:hover {
-    background-color: color-mix(in srgb, black 15%, royalblue);
-  }
-}
