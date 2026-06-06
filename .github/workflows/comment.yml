@@ -13,10 +13,10 @@ jobs:
       group: ${{ github.workflow }}
     steps:
       - uses: actions/checkout@v4
-      - run: npm install
+      - run: npm ci --omit=dev
       - name: Write to data/comments.yml
         if: ${{ github.event_name == 'issues' }}
-        run: npx tsx dev/add-comment.ts
+        run: node dev/add-comment.ts
       - name: Build
         run: npm run build
       - name: Upload artifact
