@@ -7,7 +7,7 @@ on:
 jobs:
   comment-and-build:
     name: Write comment to comments.yml, then build
-    if: ${{ contains(github.event.issue.labels.*.name, 'comment') }}
+    if: ${{ contains(github.event.issue.labels.*.name, 'comment') || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}
