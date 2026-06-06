@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "build": "node dev/esbuild.js && find public/ -type f | sed 's/public\\//https:\\/\\/sheeptester.github.io\\/guestbook\\//' > public/sitemap.txt",
-    "dev": "node dev/esbuild.js --serve"
+    "build": "node dev/esbuild.ts && find public/ -type f | sed 's/public\\//https:\\/\\/sheeptester.github.io\\/guestbook\\//' > public/sitemap.txt",
+    "dev": "node dev/esbuild.ts --serve"
   },
   "dependencies": {
+    "esbuild": "^0.28.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
@@ -13,6 +14,7 @@
   },
   "devDependencies": {
     "@sheeptester/prettier": "^3.9.0",
+    "@types/express": "^5.0.6",
     "@types/node": "^20.14.7",
     "@types/react-dom": "^18.3.0",
     "express": "^4.19.2"

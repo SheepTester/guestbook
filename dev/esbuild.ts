@@ -1,7 +1,4 @@
-// @ts-check
-
 import esbuild from 'esbuild'
-import express from 'express'
 import fs from 'fs/promises'
 import { fileURLToPath } from 'url'
 
@@ -21,6 +18,7 @@ const context = await esbuild.context({
 })
 
 if (serveMode) {
+  const { default: express } = await import('express')
   const app = express()
   app.get('/', async (_req, res) => {
     await context.rebuild()
@@ -55,6 +53,7 @@ if (serveMode) {
   await context.rebuild()
   await context.dispose()
   await fs.mkdir('public/', { recursive: true })
+  // @ts-expect-error Module either doesn't exist or has no types
   await import('../build/render.js')
   await fs.copyFile('build/render.css', 'public/index.css')
 }

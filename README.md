@@ -7,6 +7,8 @@ using github issues to allow anyone to commit was inspired by [matt's minesweepe
 ## Development
 
 ```shell
+# you need to build first before dev
+$ npm run build
 $ npm run dev
 http://localhost:8080/
 ```
