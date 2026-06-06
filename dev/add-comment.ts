@@ -1,6 +1,6 @@
 import fs from 'fs/promises'
 import YAML from 'yaml'
-import { Action, GuestbookComment } from '../src/types'
+import type { Action, GuestbookComment } from '../src/types'
 
 const path = process.env.GITHUB_EVENT_PATH
 if (!path) {
