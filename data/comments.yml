@@ -219,3 +219,10 @@
   content: this is the world
   issue_number: 33
   timestamp: 2026-01-14T20:24:56.000Z
+- author: SheepTester
+  avatar: https://avatars.githubusercontent.com/u/22133785?v=4
+  title: anematode comment nerfed
+  content: "guestbook update: anematode's 翁翁翁翁翁翁翁 comment is now truncated so you
+    get the choice to be overwhelmed by CJK UNIFIED IDEOGRAPH-7FC1"
+  issue_number: 35
+  timestamp: 2026-06-06T05:45:44.000Z
