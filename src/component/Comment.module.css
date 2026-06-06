@@ -51,8 +51,8 @@
     margin-bottom: 0;
   }
 }
-.collapsed {
-  max-height: 250px;
+.checkbox:not(:checked) + .content {
+  max-height: 140px;
   overflow: hidden;
   position: relative;
 }
@@ -64,4 +64,30 @@
   display: flex;
   padding: 10px;
   justify-content: center;
+}
+.checkbox:checked + .content .shadow {
+  position: sticky;
+  bottom: 0;
+}
+.checkbox:checked:not(:focus-visible) + .content .shadow {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.checkbox:focus-visible + .content .showMoreBtn {
+  outline: 3px solid currentColor;
+}
+.checkbox:checked + .content .showMoreBtn {
+  font-size: 0;
+
+  &::after {
+    /* Screen readers will say that "Show more" is a checkbox that is
+    checked/unchecked */
+    content: 'Show less' / '';
+    font-size: 1rem;
+  }
 }

@@ -3,7 +3,7 @@ import { GuestbookComment } from '../types'
 import styles from './Comment.module.css'
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
-import { useState } from 'react'
+import { useId } from 'react'
 
 export type CommentProps = {
   comment: GuestbookComment
@@ -11,11 +11,10 @@ export type CommentProps = {
 export function Comment ({
   comment: { author, avatar, title, content, issue_number, timestamp }
 }: CommentProps) {
-  const contentEmpty = content === null || content.trim().length === 0
+  const id = useId()
 
-  const [collapsed, setCollapsed] = useState(true)
+  const contentEmpty = content === null || content.trim().length === 0
   const isLong = content && content.length > 1000
-  const isCollapsed = isLong && collapsed
 
   return (
     <article className={styles.comment}>
@@ -42,21 +41,26 @@ export function Comment ({
         </a>
       </div>
       {!contentEmpty ? <h1 className={styles.heading}>{title}</h1> : null}
-      <div
-        className={`${styles.content} ${isCollapsed ? styles.collapsed : ''}`}
-      >
+      {isLong ? (
+        <input
+          type='checkbox'
+          id={id}
+          className={`accessibly-hidden ${styles.checkbox}`}
+        />
+      ) : null}
+      <div className={styles.content}>
         {contentEmpty ? (
-          <p>title</p>
+          <p>{title}</p>
         ) : (
           <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>
             {content}
           </Markdown>
         )}
-        {isCollapsed ? (
+        {isLong ? (
           <div className={styles.shadow}>
-            <button className='button' onClick={() => setCollapsed(false)}>
+            <label htmlFor={id} className={`button ${styles.showMoreBtn}`}>
               Show more
-            </button>
+            </label>
           </div>
         ) : null}
       </div>
